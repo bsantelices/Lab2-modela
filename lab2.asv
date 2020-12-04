@@ -1,0 +1,52 @@
+%%%% PRIMERA PARTE %%%%
+
+title1 = 'H1 Abierto'
+title2 = 'H1 Cerrado'
+title3 = 'H2 Abierto'
+title4 = 'H3 Cerrado'
+
+
+%%% Primera funcion %%%
+
+% Lazo abierto 
+
+s = tf ('s');
+H1 = (8*s)/(6*s + 2);
+figure
+plot(step(H1));
+title('H1 Abierto');
+
+
+% Lazo cerrado
+H1_cerrado = feedback(H1,-1);
+figure
+plot(step(H1_cerrado));
+title('H1 Cerrado');
+
+
+%%% Segunda funcion %%%
+
+% Lazo abierto 
+
+%s = tf ('s');
+H2 = (8*(s^2) + 7*s + 4)/((s^2) + 6*s + 3);
+figure
+plot(step(H2));
+title('H2 Abierto');
+
+% Lazo cerrado
+H2_cerrado = feedback(H2,-1);
+figure
+plot(step(H2_cerrado));
+title('H2 Cerrado');
+
+function [] = graph(H,title)
+    plot(step(H));
+    xlabel('t');
+    ylabel('A');
+    title(title);
+    grid on;
+end
+
+
+
