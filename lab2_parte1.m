@@ -21,7 +21,7 @@ saveas(gcf,'H1 Lazo Abierto.png')
 % Lazo cerrado
 H1_cerrado = feedback(H1,1,-1);
 figure
-plot(step(H1_cerrado));
+step(H1_cerrado);
 title('H1 Lazo Cerrado');
 xlabel('Tiempo(segundos)');
 ylabel('Amplitud');
@@ -33,11 +33,11 @@ saveas(gcf,'H1 Lazo Cerrado.png')
 %%% Segunda funcion %%%
 
 %Definicion de la funcion
-H2 = (8*(s^2) + 7*s + 4)/((s^2) + 6*s + 3);
+H2 = (5*(s^2) + 7*s + 4)/((s^2) + 6*s + 3);
 
 % Lazo abierto 
 figure
-plot(step(H2));
+step(H2);
 title('H2 Lazo Abierto');
 xlabel('Tiempo(segundos)');
 ylabel('Amplitud');
